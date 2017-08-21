@@ -40,4 +40,8 @@ app.prepare()
         server.get("/api/contracts", function (req, res) {
             res.json(yellowPage.GetCache() || {});
         });
+
+        server.get("*", (req, res) => {
+            handle(req, res);
+        });
     });
