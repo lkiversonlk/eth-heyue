@@ -46,21 +46,23 @@ server.get("/api/contracts", function (req, res) {
     res.json(yellowPage.GetCache() || {});
 });
 
-server.get("/", (req, res) => {
-    //copy the contracts to avoid sync modified
-    var contracts = JSON.parse(JSON.stringify(req.app.get('yellowpage').GetCache()));
+var index = require("./routers/index");
 
-    var c_array = [];
-    Object.keys(contracts).forEach(function (c_name) {
-        var contract = contracts[c_name];
-        contract.name = c_name;
-        contract.description = "this is a test description";
-        c_array.push(contract);
-    });
-    res.render("index", {
-        c: c_array
-    });
+server.get('/goto', function (req, res) {
+    var query = req.query;
+    var url = query.url;
+
+    if(url){
+        if(url.startsWith("www")){
+            url = "http://" + url;
+        }
+        res.redirect(url);
+    } else {
+        res.sendStatus(404);
+    }
 });
+
+server.get("/", index);
 
 server.get("/usage", (req, res) => {
     res.render("usage", {

@@ -5,7 +5,7 @@ block content
         // small cards
         .row
             each contract in c
-                .col-md-3
+                .col-md-4
                     .card
                         .card-content
                             .card-header-blue
@@ -17,7 +17,9 @@ block content
                             nav.nav-tabs
                                 ul.nav.nav-pills.pull-left
                                     li.card-action
-                                        a(href='#') Contract Address
+                                        a(href='/goto?url=https://etherchain.org/account/#{contract.c_addr}') 合约地址
                                     li.card-action
-                                        a(href='#') Owner Address
+                                        a(href='/goto?url=https://etherchain.org/account/#{contract.owner}') 作者地址
+                                    li.card-action
+                                        a(href="/goto?url=#{contract.url}") 详情页面
 
