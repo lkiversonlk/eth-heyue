@@ -68,6 +68,10 @@ body {
     margin:1em;
 }
 
+.card-content{
+    width: 100%;
+}
+
 .pull-left {
     float: left;
 }

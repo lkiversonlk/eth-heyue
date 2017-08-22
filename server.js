@@ -20,7 +20,9 @@ var count = yellowPage.TotalCount();
 console.log("started to load " + count + " contracts");
 yellowPage.StartCache(1);
 
+
 const server = express();
+server.set("yellowpage", yellowPage);
 server.set("views", path.join(__dirname, "views"));
 server.set('view engine', 'jade');
 
@@ -45,8 +47,18 @@ server.get("/api/contracts", function (req, res) {
 });
 
 server.get("/", (req, res) => {
+    //copy the contracts to avoid sync modified
+    var contracts = JSON.parse(JSON.stringify(req.app.get('yellowpage').GetCache()));
+
+    var c_array = [];
+    Object.keys(contracts).forEach(function (c_name) {
+        var contract = contracts[c_name];
+        contract.name = c_name;
+        contract.description = "this is a test description";
+        c_array.push(contract);
+    });
     res.render("index", {
-        usage: usage
+        c: c_array
     });
 });
 
