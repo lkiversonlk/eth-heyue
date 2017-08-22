@@ -11,14 +11,14 @@
 
         ------------------------------------------
     
-        {
-            "yellowpage": {
-                "c_addr": "0x3b58331ffb2d246838185f8df90ecf2956a4dce1",
-                "owner": "0xc713ad7305ec2eb9d8d7654190ac359293a22968",
-                "url": "www.ethheyue.com",
-                "set": true
+            {
+                "yellowpage": {
+                    "c_addr": "0x3b58331ffb2d246838185f8df90ecf2956a4dce1",
+                    "owner": "0xc713ad7305ec2eb9d8d7654190ac359293a22968",
+                    "url": "www.ethheyue.com",
+                    "set": true
+                }
             }
-        }
         
 2. 通过[eth-yellowpage npm](https://www.npmjs.com/search?q=eth-yellowpage)包从ethereum blockchain上读取
 

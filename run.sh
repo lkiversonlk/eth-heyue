@@ -4,5 +4,4 @@
 cat PID | xargs kill
 git pull
 npm install || true
-npm run build
 NODE_ENV=production nohup node server.js 2>&1 &
