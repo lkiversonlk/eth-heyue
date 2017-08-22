@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/css/layout.css')
+        script(src='http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+        title="以太合约网|eth合约网"
+body
+    .container-fluid
+        .row
+            .jumbotron
+                h1.blue(style='color:#2196F3;') Eth合约网 | 以太合约网
+                h3.blue ethereum智能合约黄页，找到你想要的智能合约信息
+                div
+                    span
+                        |通过程序访问请阅读
+                        a(href="/usage")
+                            | 帮助
+
+    block content
